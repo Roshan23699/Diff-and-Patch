@@ -2,14 +2,14 @@
 #include <stdlib.h>
 #include <string.h>
 #include "list.h"
-
+//function to print the given line as input
 void printline(char *str){ 
 	int i = 0;							
 	for(i = 0; i < strlen(str); i++)
 		printf("%c", str[i]);
 		printf("\n");
 }
-
+//function to print the line with spaces (important for -y)
 void print_with_spaces(char *str){
 	int i = 0, l = 0;
 	if(str == NULL){
@@ -31,7 +31,7 @@ void print_with_spaces(char *str){
 	printf("\t\t");
 }
 
-
+//the utility function to find the actual diff btw two files
 void getdiff(list_lcs l, list l1, list l2){
 	node_lcs *ptr = l.rear;
 	int k1 = length(l1), k2 = length(l2);
@@ -162,7 +162,7 @@ void getdiff(list_lcs l, list l1, list l2){
 		ptr = ptr->next;
 	}while(ptr != l.rear);
 }
-
+//function to print the diff of the files with the -c flag
 void _cdiff(list_lcs l, list l1, list l2){
 	int k1 = length(l1), k2 = length(l2), i = 0, j = 0;
 	node_lcs *ptr = l.rear;
@@ -367,7 +367,7 @@ void _cdiff(list_lcs l, list l1, list l2){
 	}
 		
 }
-
+//function to print the diff with -y flag
 void _ydiff(list_lcs l, list l1, list l2){
 	int k1 = length(l1), k2 = length(l2), k = 0, k3, flag = 0, flag1 = 0, flag2 = 0;
 	k1 > k2 ? (k3 = k1) : (k3 = k2);
@@ -694,6 +694,7 @@ void _udiff(list_lcs l, list l1, list l2){
 			
 	}
 }
+//end of file
 
 
 

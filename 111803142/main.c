@@ -1,14 +1,15 @@
 /*Give two file names as arguments*/
 
 #include <stdio.h>
+#include <sys/types.h>
 #include <stdlib.h>
+#include <stdio.h>
+#include <sys/types.h>
 #include <string.h>
 #include <fcntl.h>
 #include <unistd.h>
 #include "list.h"
 #include "file.h"
-#include <sys/stat.h>
-#include <sys/types.h>
 
 
 

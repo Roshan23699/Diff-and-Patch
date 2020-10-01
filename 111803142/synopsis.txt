@@ -15,7 +15,7 @@ diff : compare files line by line
               ignore case differences in file contents
 6) -u, 	
 	      output NUM (default 3) lines of unified context
-B)patch : apply a diff file to an original
+B)patch : apply a diff file to an origina file
 patch  takes a patch file patchfile containing a difference listing produced by the diff program and applies those differences to one or more original files, producing patched versions.
 Normally the patched versions are put in place of the originals.
 Backups can be made.

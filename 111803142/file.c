@@ -5,7 +5,7 @@
 #include <sys/stat.h>
 #include <sys/types.h>
 #include "list.h"
-
+//function to count the no. of lines
 int countlines(int fd) {
 	int count = 0;
 	char ch;
@@ -15,6 +15,7 @@ int countlines(int fd) {
 	}
 	return count;
 }
+//function to read the line
 char *readline(int fd, int flag_w) {
 	char ch;
 	int i = 0;
@@ -43,4 +44,5 @@ char *readline(int fd, int flag_w) {
 	}
 	return s;
 }
+//end of line
 

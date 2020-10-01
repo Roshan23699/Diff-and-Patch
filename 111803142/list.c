@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "list.h"
-
+//strcmp sligtly costumized to compare string with given conditions
 int mystrcmp(char *str1, char *str2, char ch){
 	if(ch == 'w' || ch == 'b'){
 		return own_str_cmp(str1, str2, ch);
@@ -78,13 +78,13 @@ int own_str_cmp(char *str1, char *str2, char ch){
 	return 0;
 	
 }
-
+//utility function to initialize the list
 void init(list *l){
 	l->front = NULL;
 	l->rear = NULL;
 }
 
-
+//utility function to add the node to list
 void addnode(list *l, char *str){
 	node *newnode = (node*)malloc(sizeof(node));
 	strcpy(newnode->data, str);
@@ -105,12 +105,12 @@ void addnode(list *l, char *str){
 	}
 	
 }
-
+//init LCS
 void init_lcs(list_lcs *l){
 	l->front = NULL;
 	l->rear = NULL;
 }
-
+//add the node to lcs
 void addnode_lcs(list_lcs *l, char *str, int l1, int l2){
 	node_lcs *newnode = (node_lcs*)malloc(sizeof(node_lcs));
 	strcpy(newnode->data, str);
@@ -131,7 +131,7 @@ void addnode_lcs(list_lcs *l, char *str, int l1, int l2){
 	}
 }
 
-
+//find the length of list
 int length(list l){
 	int len = 0;
 	node* ptr = l.rear;
@@ -146,7 +146,7 @@ int length(list l){
 	return len;
 }
 
-
+//print the list
 void printlist(list l){
 	node *ptr = l.rear;
 	int i = 0;
@@ -179,7 +179,7 @@ void printlist_lcs(list_lcs l){
 	}
 }
 
-
+//utility function to find the largest among two numbers
 int larger(int a, int b){
 	if(a >= b)
 		return a;
@@ -270,6 +270,7 @@ void printfor_lcs(list l, int from, int to, char ch){
 		ptr = ptr->next;
 	}
 }
+//find the length of lcs
 
 int length_lcs(list_lcs l){
 	int len = 0;
@@ -284,4 +285,4 @@ int length_lcs(list_lcs l){
 	
 	return len;
 }
-
+//end of file
