@@ -1,4 +1,6 @@
-#include"diff.h"
+#include "diff.h"
+
+// function to count lines from file
 int countlines(int fd) {
 	int count = 0;
 	char ch;
@@ -8,6 +10,8 @@ int countlines(int fd) {
 	}
 	return count;
 }
+
+// function to read lines
 char *readline(int fd, int flag_w, int flag_b) {
 	char ch;
 	int i = 0;
@@ -37,6 +41,8 @@ char *readline(int fd, int flag_w, int flag_b) {
 	s[i] = '\0';
 	return s;
 }
+
+// String comparison function to compare strings according to flag
 int mystrcmp(char *str1, char *str2, int flag_i) {
 	int len1 = strlen(str1);
 	int len2 = strlen(str2);
@@ -112,6 +118,8 @@ int mystrcmpw(char *str1, char *str2, int flag_i) {
 		return 0;
 	
 }
+
+// function to reverse string
 char *strrev(char *s1) {
 	char temp;
 	int len = strlen(s1);
@@ -172,6 +180,8 @@ void printfort(char *s1) {
 
 
 }
+
+// To get the creation time of file
 void getFileCreationTime(char *filePath){
 	struct stat attrib;
 	stat(filePath, &attrib);
