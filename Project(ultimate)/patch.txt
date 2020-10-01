@@ -1,0 +1,20 @@
+patch Command
+Purpose
+Applies changes to files.
+
+Syntax
+patch [ -b [ -B Prefix ] ] [ -f ] [ -l ] [ -N ] [ -R ] [ -s ] [ -v ] [ -c | -e | -n ] [ -d Directory ] [ -D Define ] [ -F Number ] [ -i PatchFile ] [ -o OutFile ] [ -p Number ] [ -r RejectFile ] [ -x Number ] [ File ]
+
+Description
+The patch command reads a source file's instructions on how to change a file, then applies the changes. The source file contains difference listings (or diff listings) produced by the diff command. The diff listings are the result of comparing two files and building instructions about how to reconcile the differences. By default, the patch command uses the source file read from standard input, but this can be overridden using the -i flag and the PatchFile variable.
+
+Diff listings come in three formats: normal, context, or in the style of the ed editor. The patch command determines the diff listing format, unless overruled by the -c, -e, or -n flags.
+
+By default, the patched version of a file replaces the original version. When the -b flag is specified, the original of each patched file is saved in a file of the same name with the suffix .orig appended to it. You may also specify where you want the output to go with the -o flag.
+
+The -p flag makes it possible to customize a patch file to local user directory structures without manually editing the patch file. This is done by specifying how many components to remove from the full path name. For example, if the patch file contained the path name /curds/whey/src/blurfl/blurfl.c , then:
+
+-p 0 causes the entire path name to be used.
+-p 1 removes the leading slash, leaving curds/whey/src/blurfl/blurfl.c .
+-p 4 removes leading slashes and the first three directories, leaving blurfl/blurfl.c .
+Not specifying the -p flag causes the patch command to use the base name. In the above example, that would be blurfl.c .
